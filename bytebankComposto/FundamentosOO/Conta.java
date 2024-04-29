@@ -7,7 +7,6 @@ public class Conta {
     Cliente titular;
 
  
-
     public void transfere(Conta destino, double valor) { //"Forma Imperativa"; "Maneira de transferir dinheiro para outra Conta, de uma Conta (Tem um sujeito)"
         if(this.saldo >= valor) {
             destino.saldo=destino.saldo+valor;
@@ -16,12 +15,6 @@ public class Conta {
             
         }
     }
-
-
-
-
-
-
 
     public boolean saca(double valor) { //Forma Orientada a Objetos; O metodo, ja sabe a qual sujeito (objeto) ele pertence; *USO DO THIS*
         if(this.saldo >= valor) {
