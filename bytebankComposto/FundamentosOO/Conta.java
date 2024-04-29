@@ -4,10 +4,10 @@ public class Conta {
     double saldo;
     int agencia;                            
     int numero;
-    Cliente titular;
+    Cliente titular = new Cliente(); // Uma outra forma de se referenciar de maneira mais "generalizada": Toda Conta possui um titular Cliente; obs: e se fosse o caso de um Cliente ter mais de uma Conta? R-Depedende! Isso so exemplifica o fato de que se pode ja criar essa referencia no atributo titular do tipo Cliente
 
  
-    public void transfere(Conta destino, double valor) { //"Forma Imperativa"; "Maneira de transferir dinheiro para outra Conta, de uma Conta (Tem um sujeito)"
+    public void transfere(Conta destino, double valor) { 
         if(this.saldo >= valor) {
             destino.saldo=destino.saldo+valor;
             this.saldo = this.saldo - valor;
@@ -16,7 +16,7 @@ public class Conta {
         }
     }
 
-    public boolean saca(double valor) { //Forma Orientada a Objetos; O metodo, ja sabe a qual sujeito (objeto) ele pertence; *USO DO THIS*
+    public boolean saca(double valor) { 
         if(this.saldo >= valor) {
             this.saldo=this.saldo-valor;
             return true;
@@ -25,7 +25,7 @@ public class Conta {
         }
     }
 
-    public void deposita(double valor) { //"Maneira de depoistar valor em uma Conta. Mas cade essa conta? (O THIS)"
+    public void deposita(double valor) { 
         this.saldo = this.saldo + valor;
     }
 }
