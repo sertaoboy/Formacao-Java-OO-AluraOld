@@ -1,7 +1,7 @@
 package bytebankComposto.FundamentosOO;
 
 public class Conta {
-    double saldo;
+    private double saldo;  //quando se tem um atributo modificado, ele nao pode ser lido nem escrito(modificado); ou seja, precisamos de uma maneira(comportamento, metodo, etc) de acessar o atributo
     int agencia;                            
     int numero;
     Cliente titular = new Cliente(); // "toda conta ja abre um cliente(cria,etc)"
@@ -27,5 +27,9 @@ public class Conta {
 
     public void deposita(double valor) { 
         this.saldo = this.saldo + valor;
+    }
+
+    public double pegaSaldo(){
+        return this.saldo;
     }
 }
