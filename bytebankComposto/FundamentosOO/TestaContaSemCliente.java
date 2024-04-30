@@ -5,7 +5,7 @@ public class TestaContaSemCliente {
         Conta contaDaMarcela = new Conta();
         System.out.println(contaDaMarcela.saldo);
 
-        contaDaMarcela.titular = new Cliente(); 
+        contaDaMarcela.titular = new Cliente(); //isso e possivel gracas a especificacao da classe Conta, onde possui um atributo `Cliente titular = new Cliente();`
         System.out.println(contaDaMarcela.titular); 
         contaDaMarcela.titular.nome = "Marcela"; 
         System.out.println(contaDaMarcela.titular.nome); 
