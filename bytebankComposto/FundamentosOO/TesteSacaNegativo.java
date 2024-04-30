@@ -6,7 +6,7 @@ public class TesteSacaNegativo {
         conta.deposita(100);
         conta.saca(200);
         System.out.println(conta.saca(200)); //false; 100.0
-        System.out.println(conta.pegaSaldo()); //atualizando o erro por saldo estar agora protegido, invocando o metodo pegaSaldo()
+        System.out.println(conta.getSaldo()); //atualizando o erro por saldo estar agora protegido, invocando o metodo pegaSaldo()
 
 
 
