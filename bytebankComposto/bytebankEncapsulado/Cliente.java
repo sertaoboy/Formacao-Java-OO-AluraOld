@@ -1,4 +1,4 @@
-package bytebankEncapsulado;
+package bytebankComposto.bytebankEncapsulado;
 
 public class Cliente {
     private String nome;

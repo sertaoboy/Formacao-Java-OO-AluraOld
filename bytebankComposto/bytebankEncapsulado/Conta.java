@@ -1,12 +1,12 @@
-package bytebankEncapsulado;
-//"A CLASSE CONTA E A UNICA QUE DEVE SER RESPONSAVEL PELOS ATRIBUTOS DA CLASSE CONTA, E MAIS NINGUEM!"
+package bytebankComposto.bytebankEncapsulado;
+//"A CLASSE CONTA E A UNICA QUE DEVE SER RESPONSAVEL PELOS ATRIBUTOS DA CLASSE CONTA, E MAIS NINGUEM!" Paulo Silveira.
 public class Conta {
     private double saldo;  
     private int agencia;                            
     private int numero;
-    Cliente titular = new Cliente(); 
+    private Cliente titular;
 
- 
+    
     public void transfere(Conta destino, double valor) { 
         if(this.saldo >= valor) {
             destino.saldo=destino.saldo+valor;
@@ -32,9 +32,10 @@ public class Conta {
         return this.saldo;
     }
 
-    public void setSaldo(double saldo) {//Um novo valor, como parametro
-        this.saldo = saldo; //o atributo DESSE (this) objeto e o novo valor (double saldo)
-    }
+    // public void setSaldo(double saldo) {//Um novo valor, como parametro
+    //     this.saldo = saldo; //o atributo DESSE (this) objeto e o novo valor (double saldo)
+    // }
+    //E preciso um metodo setSaldo()?? Baseado na estrutura da classe Conta, nao. Pois ja temos metodos que trabalham com o atributo `saldo`: saca(); deposita()
     public int getNumero(){
         return this.numero;
     }
@@ -46,7 +47,13 @@ public class Conta {
         return this.agencia;
     }
     public void setAgencia(int agencia) {
-        this.agencia = agencia;
+        if(agencia<=0) {
+            System.out.println("Valores negativos para agencia nao e permitido.");
+            return;
+        }else {
+            this.agencia = agencia;
+        }
+        
     }
     public Cliente getTitular() {
         return this.titular;
