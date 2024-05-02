@@ -5,6 +5,25 @@ public class Conta {
     private int agencia;                            
     private int numero;
     private Cliente titular;
+    
+
+    public Conta(int agencia, int numero){ 
+        if(agencia <= 0 || numero <= 0) {
+            System.out.println("Agencia e Numero nao se pode ter valor 0 ou negativo");
+        }else{
+            this.agencia=agencia;
+            this.numero=numero;
+        }
+    }//Esse construtor implica na razao da existencia do metodos setAgencia() e setNumero()?? DEPENDE DA ESPECIFICACAO; bom para reflexao; "Atributo imutavel caso sim, pois depois que ele foi criado, nunca mais sera alterado.", Paulo Silveira
+    
+    //por que um construtor NAO e um METODO? reparar que: nao existe retorno (void,int,etc). So se exceuta com a palavra chave `new`
+    //sem o construtror(), o proprio Java define os atributos da classe Conta com valor default: null, 0, false,etc
+    //PODE ter mais de um construtor, com diferentes argumentos, implementacoes...
+    public Conta(){
+
+    }//neste por exemplo, simula o construtor padrao do Java(como se nem houvessemos escrito);
+    //motivo desse ultimo: somente para demonstrar que se pode ter mais de um construtor, com diferentes "identidades" e para as outras classes de teste compilarem, pois nao haviamos utilizado um construtror com parametros
+
 
     
     public void transfere(Conta destino, double valor) { 
@@ -40,7 +59,13 @@ public class Conta {
         return this.numero;
     }
     public void setNumero(int numero){ //Um novo numero, como parametro
-        this.numero=numero; //o atributo DESSE (this) objeto e o novo numero(int numero)
+        if(numero <= 0) {
+            System.out.println("Numero da conta 0 ou negativo nao e permitido.");
+            return;
+        }else{
+            this.numero=numero; //o atributo DESSE (this) objeto e o novo numero(int numero)
+        }
+        
     }
 
     public int getAgencia() {

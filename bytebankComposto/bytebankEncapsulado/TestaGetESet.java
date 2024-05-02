@@ -38,5 +38,7 @@ public class TestaGetESet {
         System.out.println(paulo);
         System.out.println(conta.getTitular());
         // retorna o mesmo conteudo; maneiras diferentes de acesso; se referenciam ao MESMO objeto
+
+        
     }
 }
