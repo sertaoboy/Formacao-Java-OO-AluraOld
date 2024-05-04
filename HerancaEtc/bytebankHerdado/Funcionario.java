@@ -3,7 +3,7 @@ package HerancaEtc.bytebankHerdado;
 public class Funcionario {
     private String nome;
     private String cpf;
-    private double salario;
+    protected double salario; //`protected`: modificador de acesso que permite o acesso direto ao atributo por suas classes FILHAS
 
     public double getBonificacao(){
         return this.salario * 0.1;
