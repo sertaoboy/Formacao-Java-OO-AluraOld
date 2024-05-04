@@ -3,10 +3,12 @@ package HerancaEtc.bytebankHerdado;
 public class Funcionario {
     private String nome;
     private String cpf;
-    protected double salario; //`protected`: modificador de acesso que permite o acesso direto ao atributo por suas classes FILHAS
+    //protected double salario; //`protected`: modificador de visibilidade que permite o acesso direto ao atributo por suas classes FILHAS
+    //CONVENCAO: nao utilizar `protected`, evite-os, se possivel deixe TODOS OS ATRIBUTOS PRIVADOS!
+    private double salario;
 
     public double getBonificacao(){
-        return this.salario * 0.1;
+        return this.salario * 0.05; //alteracao na regra de negocio onde deveria ser reimplementado o metodo para bonificar os funcionarios
     }
 
     public String getCpf() {
