@@ -32,6 +32,7 @@ public class Gerente extends Funcionario { //extends; "O Gerente eh um (extends)
         //!!!!!return this.getBonificacao() + super.salario; --> problema de implementacao, uso do `this` faz com que o metodo fique chamando sempre ele mesmo ("this same") ao ser invocado
 
 
+        System.out.println("Chamando o metodo de BONIFICACAO do Gerente");
         return super.getBonificacao() + super.getSalario(); //CONVENCAO: acessando os atributos atraves de metodos (ENCAPSULAMENTO)
     }
 }

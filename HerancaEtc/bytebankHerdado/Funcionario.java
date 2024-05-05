@@ -8,6 +8,7 @@ public class Funcionario {
     private double salario;
 
     public double getBonificacao(){
+        System.out.println("Chamando o metodo BONIFICACAO do Funcionario");
         return this.salario * 0.05; //alteracao na regra de negocio onde deveria ser reimplementado o metodo para bonificar os funcionarios
     }
 
