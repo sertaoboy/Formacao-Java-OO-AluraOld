@@ -9,23 +9,18 @@ public class Conta {
     private static int total; 
 
     public Conta(int agencia, int numero){ 
-        Conta.total++; 
-        if(agencia <= 0 || numero <= 0) {
-            System.out.println("Agencia e Numero nao se pode ter valor 0 ou negativo");
-        }else{
-            System.out.println("O total de contas instanciadas e: "+Conta.total);
-            this.agencia=agencia;
-            this.numero=numero;
-            System.out.println("Criando uma conta com o numero: "+this.numero+", e agencia: "+this.agencia+".");
-        }
+        Conta.total++;
+        this.agencia=agencia;
+        this.numero=numero;
     }
 
     
-    public void transfere(Conta destino, double valor) { 
-        if(this.saldo >= valor) {
-            destino.saldo=destino.saldo+valor;
-            this.saldo = this.saldo - valor;
+    public boolean transfere(Conta destino, double valor) { //metodo que utiliza o polimorfismo, pois tem como parametro um tipo generico `Conta`
+        if(this.saca(valor)) {
             destino.deposita(valor);
+            return true;
+        }else {
+            return false;
         }
     }
 

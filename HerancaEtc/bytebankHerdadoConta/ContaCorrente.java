@@ -8,4 +8,14 @@ public class ContaCorrente extends Conta { //O construtor nao e herdada!! O cont
         super(agencia,numero); //como a casse Conta nao possui um construtor padrao aqui neste projeto, precisamos informar quais os parametros deste construtor
         //super(); ==> caso tivesse um construtor padrao
     }
+
+
+
+    @Override //palavra chave que indica ao compilador que DE FATO voce ira mudar o comportamento de algum metodo herdado, SOBRESCRITA
+    public boolean saca(double valor) {
+        double valorASacar = valor + 0.25;
+        return super.saca(valorASacar);//redefinindo o valor de saque, adicionando 25 centavos a mais; reaproveitando o codigo referente a classe `super`
+    }
+
+    
 }
