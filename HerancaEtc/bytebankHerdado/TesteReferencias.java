@@ -32,5 +32,11 @@ public class TesteReferencias {
         EditorVideo e1 = new EditorVideo();
         e1.setSalario(2500.0);
         controle.registra(e1);
+
+
+
+        Funcionario d1 = new Designer();
+        d1.setSalario(1420.5);
+        controle.registra(d1);
     }
 }
