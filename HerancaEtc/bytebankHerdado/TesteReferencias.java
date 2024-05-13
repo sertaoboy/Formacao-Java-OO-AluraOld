@@ -2,15 +2,12 @@ package HerancaEtc.bytebankHerdado;
 
 public class TesteReferencias {
     public static void main(String[] args) {
-        Funcionario g1 = new Gerente(); // Funcionario g1 = new Geren... --> Variavel mais "generica", so tipo Funcionario mas se referindo ao Objeto Gerente; "referencia generia do tipo Funcionario se referenciando ao objeto Gerente"
-        //PQ PELO AMOR DE DEUS VC FAZ ISSO????
-        //g1.autentica(2222); ----> NAO COMPILA
-        //O compilador analisa o TIPO da REFERENCIA, ou seja, REFERENCIA DO TIPO Funcionario
+        Funcionario g1 = new Gerente(); // 
         g1.setNome("Marcos");
         String nome = g1.getNome();
         System.out.println(nome);
 
-        Funcionario f1 = new Funcionario();
+        Funcionario f1 = new Funcionario();// isso e estranho, nao deveria funcionar pois Funcionario nao e algo concreto, algo abstrato ou generico. Ninguem diz que e funcionario em uma empresa se lhe perguntam sobre sua profissao por exemplo
         f1.setSalario(2000);
         
         Gerente g2 = new Gerente();
